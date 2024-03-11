@@ -30,8 +30,8 @@
       "DataSourceItems": null
     },
     {
-      "Name": "io_dt_TransactionData",
-      "DisplayName": "io_dt_TransactionData",
+      "Name": "dt_io_TransactionData",
+      "DisplayName": "dt_io_TransactionData",
       "Category": null,
       "Tooltip": null,
       "Placeholder": null,

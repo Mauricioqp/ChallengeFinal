@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="in_DatosEntrada" Type="InArgument(x:String)" />
     <x:Property Name="in_HojaEntrada" Type="InArgument(x:String)" />
-    <x:Property Name="dt_out_DatosEntrada" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_DatosEntrada" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -104,8 +104,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Leyendo Excel de entrada en:&quot; + in_DatosEntrada.ToString]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_out_DatosEntrada]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="354,128" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_HojaEntrada.ToString]" WorkbookPath="[in_DatosEntrada.ToString]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Excel leido&quot;]" />
+    <ui:LogMessage DisplayName="Registro apertura lectura excel" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Leyendo Excel de entrada en:&quot; + in_DatosEntrada.ToString]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_DatosEntrada]" DisplayName="Leer excel de entrada" sap:VirtualizedContainerService.HintSize="354,128" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_HojaEntrada.ToString]" WorkbookPath="[in_DatosEntrada.ToString]" />
+    <ui:LogMessage DisplayName="Registro lectura exitosa" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Excel leido&quot;]" />
   </Sequence>
 </Activity>

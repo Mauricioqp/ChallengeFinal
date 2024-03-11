@@ -139,7 +139,7 @@
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,183" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Excepcion de negocio: Producto no disponible&quot;]" />
+                  <ui:LogMessage DisplayName="Logear error producto no disponible" sap:VirtualizedContainerService.HintSize="479,183" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Excepcion de negocio: Producto no disponible&quot;]" />
                   <ui:MultipleAssign DisplayName="Asignar guion a valores por producto no encontrado" sap:VirtualizedContainerService.HintSize="479,172" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -200,7 +200,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign DisplayName="Asignar delivery si" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[out_Delivery]</OutArgument>
                           </Assign.To>
@@ -217,7 +217,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign DisplayName="Asignar delivery no" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[out_Delivery]</OutArgument>
                           </Assign.To>
@@ -228,8 +228,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Precio encontrado:&quot; + out_Precio]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Delivery gratis? : &quot; + out_Delivery]" />
+                  <ui:LogMessage DisplayName="Registrar precio a log" sap:VirtualizedContainerService.HintSize="530,183" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Precio encontrado:&quot; + out_Precio]" />
+                  <ui:LogMessage DisplayName="Registrar delivery a log" sap:VirtualizedContainerService.HintSize="530,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Delivery gratis? : &quot; + out_Delivery]" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>

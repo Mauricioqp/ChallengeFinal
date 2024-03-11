@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InicializarAmazon" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InicializarAmazon" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_AmazonURL" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1206,1522</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206,2252</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InicializarAmazon_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,7 +102,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Abre la URL de Amazon almacenada en el archivo de configuracion, para luego acceder a la configuracion de la página y seleccionar idioma Ingles  y moneda CLP, luego guarda los cambios.&#xD;&#xA;" DisplayName="Inicializar Amazon" sap:VirtualizedContainerService.HintSize="512,1457" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Abre la URL de Amazon almacenada en el archivo de configuracion, para luego acceder a la configuracion de la página y seleccionar idioma Ingles  y moneda CLP, luego guarda los cambios.&#xD;&#xA;" DisplayName="Inicializar Amazon" sap:VirtualizedContainerService.HintSize="512,2187" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,13 +110,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Abrir Amazon en Edge" sap:VirtualizedContainerService.HintSize="450,1297" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0d619124-a14e-47e5-b376-87d730d351d7" Version="V2">
+    <ui:LogMessage DisplayName="Registro apertura navegador para inicializacion" sap:VirtualizedContainerService.HintSize="450,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Abriendo enlace en EDGE&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Abrir Amazon en Edge" sap:VirtualizedContainerService.HintSize="450,1846" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0d619124-a14e-47e5-b376-87d730d351d7" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1057" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1606" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,6 +145,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Registro seleccion de idioma" sap:VirtualizedContainerService.HintSize="354,183" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Seleccionando Ingles - EN&quot;]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clickear seleccion de moneda" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0d619124-a14e-47e5-b376-87d730d351d7" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.amazon.com/customer-preferences/edit?ie=UTF8&amp;preferencesReturnUrl=%2F&amp;ref_=topnav_lang_ais" CvElementArea="168, 715, 371, 34" CvType="InputBox" DesignTimeRectangle="181, 723, 168, 17" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='a-dropdown-prompt' parentid='icp-currency-dropdown-selected-item-prompt' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='a-dropdown-prompt' parentid='icp-currency-dropdown-selected-item-prompt' tag='SPAN' type='' /&gt;" Guid="6fc9524c-11fe-4778-8ebf-edd3e600ef00" InformativeScreenshot="1b4c87a2056fb970b5ea07ff7636b222.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Change Language &amp;amp; Currency Settings' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -160,7 +162,8 @@
                 <uix:TargetAnchorable BrowserURL="https://www.amazon.com/customer-preferences/edit?ie=UTF8&amp;preferencesReturnUrl=%2F&amp;ref_=topnav_lang_ais" CvTextArea="182, 237, 119, 13" CvTextArgument="CLP - Chilean Peso" CvType="Text" DesignTimeRectangle="183, 235, 118, 18" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='icp-currency-dropdown_2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='icp-currency-dropdown_2' tag='SPAN' type='' class='' aaname=' - Chilean Peso' check:innerText='CLP - Chilean Peso' /&gt;" Guid="a351fa3f-122f-4cf1-bb3e-5e767faec9ba" InformativeScreenshot="976886c15a0740afe0d5d8070b089e17.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Change Language &amp;amp; Currency Settings' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Guardar cambios" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0d619124-a14e-47e5-b376-87d730d351d7" Version="V3">
+            <ui:LogMessage DisplayName="Registro seleccion de moneda" sap:VirtualizedContainerService.HintSize="354,183" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Seleccionando moneda CLP&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Guardar cambios" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0d619124-a14e-47e5-b376-87d730d351d7" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.amazon.com/customer-preferences/edit?ie=UTF8&amp;preferencesReturnUrl=%2F&amp;ref_=topnav_lang_ais" CvElementArea="238, 883, 107, 34" CvTextArea="251, 893, 83, 16" CvTextArgument="Save Changes" CvType="Button" DesignTimeRectangle="241, 886, 102, 29" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-labelledby='icp-save-button-announce' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='icp-save-button-announce' tag='INPUT' type='submit' class='a-button-input' aaname='' /&gt;" Guid="beb9be55-887c-4e81-91f8-482b7b0e0030" InformativeScreenshot="9a49522421c28c78edca490d2ccf0227.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Change Language &amp;amp; Currency Settings' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -171,6 +174,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Registro guardar preferencias" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Guardando preferencias Amazon&quot;]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
