@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1335,2252</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1335,2256</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BuscarProductos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,20 +108,20 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Abre EDGE con la URL obtenida del archivo excel de entrada, pasado como una transaccion.&#xD;&#xA;Busca el estado del producto. Si no está disponible, guarda en variables de precio y delivery un guión, si no, guarda en variables de precio y delivery el precio y delivery obtenidos de la pagina (Si si ha encontrado delivery gratis, No en caso contrario)&#xD;&#xA;" DisplayName="BuscarProductos" sap:VirtualizedContainerService.HintSize="1345,2187" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Abre EDGE con la URL obtenida del archivo excel de entrada, pasado como una transaccion.&#xA;Busca el estado del producto. Si no está disponible, guarda en variables de precio y delivery un guión, si no, guarda en variables de precio y delivery el precio y delivery obtenidos de la pagina (Si si ha encontrado delivery gratis, No en caso contrario)&#xA;" DisplayName="BuscarProductos" sap:VirtualizedContainerService.HintSize="1345,2191" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Abrir EDGE con URL obtenida de la transaccion actual." sap:VirtualizedContainerService.HintSize="1283,2042" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="081ba3e2-028b-4e29-9097-8e00a2e25eca" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Abrir EDGE con URL obtenida de la transaccion actual." sap:VirtualizedContainerService.HintSize="1283,2046" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="081ba3e2-028b-4e29-9097-8e00a2e25eca" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1249,1802" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1249,1806" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Delivery" />
             </Sequence.Variables>
@@ -130,9 +130,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState sap2010:Annotation.AnnotationText="Busca en la pagina el estado del elemento con texto &quot;Currently unavaliable&quot;&#xD;&#xA;" DisplayName="Buscar si el producto no esta disponible." sap:VirtualizedContainerService.HintSize="1187,1715" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="081ba3e2-028b-4e29-9097-8e00a2e25eca" Timeout="3" Version="V3">
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Busca en la pagina el estado del elemento con texto &quot;Currently unavaliable&quot;&#xA;" DisplayName="Buscar si el producto no esta disponible." sap:VirtualizedContainerService.HintSize="1187,1719" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="081ba3e2-028b-4e29-9097-8e00a2e25eca" Timeout="3" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence sap2010:Annotation.AnnotationText="Se decidió registrar excepcion de negocios mediante Log en vez de arrojar excepcion BRE, para permitir al siguiente paso del workflow escribir los valores al excel&#xD;&#xA;" DisplayName="Si no esta disponible" sap:VirtualizedContainerService.HintSize="541,502" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap2010:Annotation.AnnotationText="Se decidió registrar excepcion de negocios mediante Log en vez de arrojar excepcion BRE, para permitir al siguiente paso del workflow escribir los valores al excel&#xA;" DisplayName="Si no esta disponible" sap:VirtualizedContainerService.HintSize="541,502" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,7 +165,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Si esta disponible" sap:VirtualizedContainerService.HintSize="592,1433" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Si esta disponible" sap:VirtualizedContainerService.HintSize="592,1435" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,7 +175,7 @@
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.amazon.com/-/es/SAMSUNG-adaptador-microSDXC-MB-ME256KA-AM/dp/B09B1GXM16/?_encoding=UTF8&amp;pd_rd_w=AwyqZ&amp;content-id=amzn1.sym.10f16e90-d621-4a53-9c61-544e5c741acc&amp;pf_rd_p=10f16e90-d621-4a53-9c61-544e5c741acc&amp;pf_rd_r=2EKX99B49VGGRQT8FTMG&amp;pd_rd_wg=Ubz32&amp;pd_rd_r=33df8239-3efa-425c-a17c-d80ff98a173b&amp;ref_=pd_gw_exports_top_sellers_unrec" CvTextArea="801, 515, 113, 27" CvType="AnyWordGroup" DesignTimeRectangle="825, 510, 89, 35" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl class='a-price-whole' parentid='corePriceDisplay_desktop_feature_div' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='a-price-whole' parentid='corePriceDisplay_desktop_feature_div' tag='SPAN' type='' /&gt;" Guid="f33d79ed-7339-4244-9c18-d6efb822e614" InformativeScreenshot="a3aa7befd3cf899624d9956a164ea747.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='https://m.media-amazon.com/images/I/11EIQ5IGqaL._RC%7C01e5ncglxyL.css,01lF2n-pPaL.css,41Mdq8Sx7GL.css,31xg3iIZbKL.css,01IWMurvs8L.css,013z33uKh2L.css,01qPl4hxayL.css,01g+NWirX6L.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11fJbvhE5HL.css,01Dm5eKVxw*' title='Amazon.com: SAMSUNG EVO Select Micro SD-Memory-Card + Adapter, 256GB microSDXC 130MB/s Full HD &amp;amp; 4K UHD, UHS-I, U3, A2, V30, Expanded Storage for Android Smartphones, Tablets, Nintendo-Switch (MB-ME256KA/AM) : Electronics' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CvTextArea="801, 515, 113, 27" CvTextArgument="CLP19,300" CvType="Text" DesignTimeRectangle="802, 514, 23, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl class='a-price-symbol' parentid='corePriceDisplay_desktop_feature_div' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='a-price-symbol' parentid='corePriceDisplay_desktop_feature_div' tag='SPAN' type='' aaname='CLP' check:innerText='CLP' /&gt;" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -187,7 +187,7 @@
                       <uix:TargetAnchorable BrowserURL="https://www.amazon.com/Unidapt-Adapter-Grounded-Adaptor-Converter/dp/B08D741PV6/?_encoding=UTF8&amp;pd_rd_w=jijKL&amp;content-id=amzn1.sym.59e06f17-139e-49a4-ada7-b8439f50bb02&amp;pf_rd_p=59e06f17-139e-49a4-ada7-b8439f50bb02&amp;pf_rd_r=2C0A240NGGT8EAAY6T8W&amp;pd_rd_wg=9bQhE&amp;pd_rd_r=2c145a53-a3ce-40e4-9153-dd68bc9aa91d&amp;ref_=pd_gw_exports_top_sellers_unrec&amp;language=es_US&amp;currency=CLP" DesignTimeRectangle="1448, 368, 206, 40" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='mir-layout-DELIVERY_BLOCK-slot-PRIMARY_DELIVERY_MESSAGE_LARGE' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mir-layout-DELIVERY_BLOCK-slot-PRIMARY_DELIVERY_MESSAGE_LARGE' tag='DIV' type='' class='a-spacing-base' aaname='' /&gt;" Guid="172e2dad-64cb-4afe-9874-d86896fd8f19" InformativeScreenshot="b86d9ce7e76cacea612c4d325c04912e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='*' title='Amazon.com: *' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
                     </uix:NGetText.Target>
                   </uix:NGetText>
-                  <If sap2010:Annotation.AnnotationText="Guarda en Delivery &quot;Si&quot; si se ha encontrado el texto &quot;FREE delivery&quot;, y &quot;No&quot; en caso contrario&#xD;&#xA;" Condition="[Delivery.Contains(&quot;FREE delivery&quot;)]" DisplayName="Verificar delivery" sap:VirtualizedContainerService.HintSize="530,600" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If sap2010:Annotation.AnnotationText="Guarda en Delivery &quot;Si&quot; si se ha encontrado el texto &quot;FREE delivery&quot;, y &quot;No&quot; en caso contrario&#xA;" Condition="[Delivery.Contains(&quot;FREE delivery&quot;)]" DisplayName="Verificar delivery" sap:VirtualizedContainerService.HintSize="530,600" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

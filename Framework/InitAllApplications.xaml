@@ -108,9 +108,7 @@
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Proceso\InicializarAmazon.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Proceso\InicializarAmazon.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AmazonURL">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Amazon_URL&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_AmazonURL">[in_Config("Amazon_URL").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Proceso\ObtenerProductos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Proceso\ObtenerProductos.xaml">
@@ -121,7 +119,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_HojaEntrada">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;HojaEntrada&quot;).ToString" />
         </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_out_DatosEntrada">
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_DatosEntrada">
           <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_dt_TransactionData" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
